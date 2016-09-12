@@ -79,7 +79,7 @@ module.exports = yeoman.Base.extend({
     }, {
       name   : 'appKeywords',
       message: 'How would you describe your application in comma seperated key words?',
-      default: 'activity vue'
+      default: 'activity,vue'
     }, {
       name   : 'appAuthor',
       message: 'What is your company/author name?'
@@ -101,14 +101,15 @@ module.exports = yeoman.Base.extend({
    * 更新package.json数据
    */
   updatePackage() {
-    var pkg = this.fs.readJSON(this.destinationPath(folder + '/package.json'), {});
+    var packagePath = this.destinationPath(folder + '/package.json');
+    var pkg = this.fs.readJSON(packagePath, {});
     extend(pkg, {
       name: this.appName,
       description: this.appDescription,
       author: this.appAuthor,
-      keywords: this.appKeywords
+      keywords: this.appKeywords.split(',')
     });
-    this.fs.writeJSON(this.destinationPath(folder + '/package.json'), pkg);
+    this.fs.writeJSON(packagePath, pkg);
   },
 
   /**

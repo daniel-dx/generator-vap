@@ -31,7 +31,7 @@ module.exports = yeoman.Base.extend({
       this.props.camelComponentName = s(this.props.componentName).camelize().value(); // => demoUser
       this.props.firstCapCamelComponentName = s(this.props.camelComponentName).capitalize().value(); // => DemoUser
 
-      scrFolder = 'src/components/' + this.componentName;
+      scrFolder = 'src/components/' + this.props.componentName;
       scrFolderPath = './' + scrFolder + '/';
 
     });
@@ -62,26 +62,26 @@ module.exports = yeoman.Base.extend({
     var fullPath = 'src/components/App.vue';
 
     utils.rewriteFile({
-      file      : fullPath,
+      fileRelativePath: fullPath,
       insertPrev: true,
-      needle    : "<!-- Don't touch me -->",
-      splicable : [
+      needle: "<!-- Don't touch me -->",
+      splicable: [
         `<${this.props.componentName}></${this.props.componentName}>`
       ]
     });
     utils.rewriteFile({
-      file      : fullPath,
+      fileRelativePath: fullPath,
       insertPrev: true,
-      needle    : "// Don't touch me - import",
-      splicable : [
+      needle: "// Don't touch me - import",
+      splicable: [
         `import ${this.props.firstCapCamelComponentName} from './${this.props.componentName}/index.vue'`
       ]
     });
     utils.rewriteFile({
-      file      : fullPath,
+      fileRelativePath: fullPath,
       insertPrev: true,
-      needle    : "// Don't touch me - component",
-      splicable : [
+      needle: "// Don't touch me - component",
+      splicable: [
         `${this.props.firstCapCamelComponentName},`
       ]
     });
