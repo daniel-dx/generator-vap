@@ -16,6 +16,12 @@ Then generate your new project:
 yo vap
 ```
 
+You can add you vue component by:
+
+```bash
+yo vap:add-comp
+```
+
 ## Getting To Know Yeoman
 
  * Yeoman has a heart of gold.

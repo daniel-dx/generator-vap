@@ -1,6 +1,6 @@
 {
   "name": "generator-vap",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "vue activity project generator",
   "homepage": "",
   "author": {
@@ -43,7 +43,7 @@
       "mocha": true
     }
   },
-  "repository": "/generator-vap",
+  "repository": "https://github.com/daniel-dx/generator-vap.git",
   "scripts": {
     "prepublish": "gulp prepublish",
     "test": "gulp"
