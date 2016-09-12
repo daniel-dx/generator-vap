@@ -1,4 +1,4 @@
-# generator-vap [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url]
+# generator-vap
 > vue activity project generator
 
 ## Installation
